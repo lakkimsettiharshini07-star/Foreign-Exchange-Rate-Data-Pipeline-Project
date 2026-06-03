@@ -1,0 +1,21 @@
+{
+    "metadata": {
+        "endpoint": "latest_rates",
+        "request_timestamp": "2026-04-19 15:44:43",
+        "status_code": 200,
+        "batch_id": "fx_20260419_154443"
+    },
+    "data": {
+        "amount": 1.0,
+        "base": "EUR",
+        "date": "2026-04-17",
+        "rates": {
+            "AUD": 1.6438,
+            "CAD": 1.6129,
+            "GBP": 0.87168,
+            "INR": 109.5025,
+            "JPY": 187.72,
+            "USD": 1.1797
+        }
+    }
+}

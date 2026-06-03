@@ -1,0 +1,24 @@
+api:
+  url: https://api.frankfurter.app
+
+currency:
+  base: EUR
+  targets:
+    - INR
+    - USD
+    - GBP
+    - JPY
+    - AUD
+    - CAD
+
+date:
+  backfill_days: 30
+
+pipeline:
+  run_frequency: daily
+
+paths:
+  bronze: data/bronze/exchange_rates/
+  silver: data/silver/exchange_rates/
+  gold: data/gold/marts/
+  logs: data/logs/

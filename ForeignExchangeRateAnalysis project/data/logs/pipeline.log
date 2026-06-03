@@ -1,0 +1,49 @@
+2026-04-20 20:30:30,588 - INFO - Pipeline started \U0001f680
+2026-04-20 20:30:30,600 - INFO - Running daily pipeline...
+2026-04-20 20:30:30,600 - INFO - Starting latest data extraction...
+2026-04-20 20:30:30,601 - INFO - Calling API: https://api.frankfurter.app/latest?from=EUR&to=INR,USD,GBP,JPY,AUD,CAD
+2026-04-20 20:30:43,383 - INFO - API call successful \u2705
+2026-04-20 20:30:43,385 - INFO - Bronze file saved at: data/bronze/exchange_rates//fx_20260420_203043.json
+2026-04-20 20:30:43,388 - INFO - Starting Bronze validation for file: data/bronze/exchange_rates//fx_20260420_203043.json
+2026-04-20 20:30:43,400 - INFO - Bronze validation passed \u2705
+2026-04-20 20:30:43,400 - INFO - Starting transformation for file: data/bronze/exchange_rates//fx_20260420_203043.json
+2026-04-20 20:30:43,402 - INFO - Processing latest API data
+2026-04-20 20:30:43,402 - INFO - Total records created: 6
+2026-04-20 20:30:43,421 - INFO - Data cleaning completed
+2026-04-20 20:30:43,421 - INFO - Existing Silver file found \u2192 appending data
+2026-04-20 20:30:44,045 - INFO - Rows before append: 144, after append: 150
+2026-04-20 20:30:44,052 - INFO - Duplicates removed: 0
+2026-04-20 20:30:44,058 - INFO - Saved Silver data at: data/silver/exchange_rates//exchange_rates.parquet
+2026-04-20 20:30:44,058 - INFO - Starting Silver validation
+2026-04-20 20:30:44,063 - INFO - Silver validation passed \u2705
+2026-04-20 20:30:44,064 - INFO - Silver layer successfully created \u2705
+2026-04-20 20:30:44,075 - INFO - Loaded Silver data with 150 records
+2026-04-20 20:30:44,075 - INFO - Building Gold datasets...
+2026-04-20 20:30:44,075 - INFO - Building movement dataset
+2026-04-20 20:30:44,081 - INFO - Movement dataset created with 150 rows
+2026-04-20 20:30:44,081 - INFO - Building weekly summary dataset
+2026-04-20 20:30:44,084 - INFO - Weekly summary created with 6 rows
+2026-04-20 20:30:44,084 - INFO - Building ranking dataset
+2026-04-20 20:30:44,085 - INFO - Ranking created for 6 currencies
+2026-04-20 20:30:44,085 - INFO - Building conversion dataset
+2026-04-20 20:30:44,086 - INFO - Conversion dataset created with 6 rows
+2026-04-20 20:30:44,088 - INFO - movement saved at data/gold/marts//movement.parquet \u2705
+2026-04-20 20:30:44,089 - INFO - weekly_summary saved at data/gold/marts//weekly_summary.parquet \u2705
+2026-04-20 20:30:44,090 - INFO - ranking saved at data/gold/marts//ranking.parquet \u2705
+2026-04-20 20:30:44,091 - INFO - conversion saved at data/gold/marts//conversion.parquet \u2705
+2026-04-20 20:30:44,091 - INFO - Gold layer created successfully \u2705
+2026-04-20 20:30:44,091 - INFO - Loading data into MySQL...
+2026-04-20 20:30:44,091 - INFO - Connecting to MySQL database...
+2026-04-20 20:30:44,172 - INFO - Connection successful \u2705
+2026-04-20 20:30:44,172 - INFO - Loading Gold datasets from parquet...
+2026-04-20 20:30:44,240 - INFO - Gold datasets loaded successfully
+2026-04-20 20:30:44,240 - INFO - Creating tables if not exist...
+2026-04-20 20:30:44,252 - INFO - Clearing old data from tables...
+2026-04-20 20:30:44,256 - INFO - Inserting data into tables...
+2026-04-20 20:30:44,289 - INFO - Inserted 150 rows into gold_movement
+2026-04-20 20:30:44,290 - INFO - Inserted 6 rows into gold_weekly_summary
+2026-04-20 20:30:44,291 - INFO - Inserted 6 rows into gold_ranking
+2026-04-20 20:30:44,292 - INFO - Inserted 6 rows into gold_conversion
+2026-04-20 20:30:44,295 - INFO - Data loaded into MySQL successfully \u2705
+2026-04-20 20:30:44,295 - INFO - Data loaded into MySQL successfully \u2705
+2026-04-20 20:30:44,295 - INFO - Pipeline completed successfully \U0001f680
